@@ -3,6 +3,8 @@ package usandoJavax;
 import javax.swing.*;
 
 public class InformacoesUsuario {
+
+
     public static void main(String[] args) {
 
         String nome = JOptionPane.showInputDialog("Digite seu nome: ");
@@ -13,6 +15,7 @@ public class InformacoesUsuario {
         String estado = JOptionPane.showInputDialog("Digite seu estado: ");
         String pais = JOptionPane.showInputDialog("Digite seu país: ");
 
+
         int resultado = JOptionPane.showConfirmDialog(null, "Deseja ver o resultado? ");
 
         if (resultado == 0) {
@@ -22,5 +25,7 @@ public class InformacoesUsuario {
         } else {
             JOptionPane.showMessageDialog(null, "!!! ATÉ LOGO !!! ");
         }
+
     }
 }
+

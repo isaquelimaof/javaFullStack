@@ -1,5 +1,7 @@
 package calculoMediaAlunoPOO;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Aluno {
@@ -10,14 +12,16 @@ public class Aluno {
     public String numeroRg;
     private String numerocpf;
 
-    private Disciplina disciplina = new Disciplina();
+
+    private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
 
-    public void setDisciplina(Disciplina disciplina) {
-        this.disciplina = disciplina;
+    public List<Disciplina> getDisciplinas() {
+        return disciplinas;
     }
-    public Disciplina getDisciplina() {
-        return disciplina;
+
+    public void setDisciplinas(List<Disciplina> disciplinas) {
+        this.disciplinas = disciplinas;
     }
 
 
@@ -63,10 +67,18 @@ public class Aluno {
         this.numerocpf = numerocpf;
     }
 
+
+
     public double getMediaNota() {
 
-        return (disciplina.getNota1()+disciplina.getNota2()+disciplina.getNota3()+disciplina.getNota4())/4;
+        double somaNotas = 0.0;
+
+        for(Disciplina disciplina : disciplinas){
+            somaNotas += disciplina.getNota();
+        }
+        return somaNotas / disciplinas.size();
     }
+
 
 
     public boolean getAlunoAprovado() {
@@ -88,12 +100,10 @@ public class Aluno {
         return getNome().equals(aluno.getNome()) && getNumerocpf().equals(aluno.getNumerocpf());
     }
 
+
     @Override
     public int hashCode() {
         return Objects.hash(getNome(), getNumerocpf());
     }
-
-
-
 
 }

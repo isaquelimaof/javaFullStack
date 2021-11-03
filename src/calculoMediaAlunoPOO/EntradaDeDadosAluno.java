@@ -21,29 +21,27 @@ public class EntradaDeDadosAluno {
         aluno1.setNumeroRg(rg);
         aluno1.setNumerocpf(cpf);
 
-        for (int i = 0; i < 5;i++) {
+        for (int i = 1; i <= 4;i++) {
 
-            double nota = Double.parseDouble(JOptionPane.showInputDialog("Digite sua nota: "));
-            String disciplina = JOptionPane.showInputDialog("Digite a disciplina: ");
+            double nota = Double.parseDouble(JOptionPane.showInputDialog("Digite a "+ i +" nota: "));
+            String nomeDisciplina = JOptionPane.showInputDialog("Digite a "+ i +" disciplina: ");
 
-            aluno1.getDisciplina().setDisciplina1(disciplina);
-            aluno1.getDisciplina().setNota1(nota);
-            aluno1.getDisciplina().setDisciplina1(disciplina);
-            aluno1.getDisciplina().setNota2(nota);
-            aluno1.getDisciplina().setDisciplina1(disciplina);
-            aluno1.getDisciplina().setNota3(nota);
-            aluno1.getDisciplina().setDisciplina1(disciplina);
-            aluno1.getDisciplina().setNota4(nota);
-            aluno1.getDisciplina().setDisciplina1(disciplina);
+            Disciplina disciplina = new Disciplina();
+
+            disciplina.setDisciplina(nomeDisciplina);
+            disciplina.setNota(nota);
+
+            aluno1.getDisciplinas().add(disciplina);
 
         }
+
 
         if (aluno1.getMediaNota() >= 60.0) {
 
             JOptionPane.showMessageDialog(null,"Resposta:\nNOME: " + aluno1.getNome()
                     + "\nIDADE: " + aluno1.getIdade()+ "\nDATA DE NASCIMENTO: " + aluno1.getDataDeNascimento()
                     + "\nNUMERO DO RG: " + aluno1.getNumeroRg()+ "\nNUMERO DO CPF: " + aluno1.getNumerocpf()
-                    + "\nSUA MÉDIA É: ----->>> " + aluno1.getMediaNota()
+                    + "\n\nSUA MÉDIA É: ----->>> " + aluno1.getMediaNota()
                     + "\n\n!!! PARABENS VOCÊ ESTÁ APROVADO !!!");
 
         } else {

@@ -26,7 +26,8 @@ public class Disciplina {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Disciplina that)) return false;
+        if (!(o instanceof Disciplina)) return false;
+        Disciplina that = (Disciplina) o;
         return Double.compare(that.getNota(), getNota()) == 0 && getDisciplina().equals(that.getDisciplina());
     }
 
@@ -37,6 +38,9 @@ public class Disciplina {
 
     @Override
     public String toString() {
-        return "Disciplina{}";
+        return "Disciplina{" +
+                "nota=" + nota +
+                ", disciplina='" + disciplina + '\'' +
+                '}';
     }
 }

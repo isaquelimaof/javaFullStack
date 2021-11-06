@@ -1,7 +1,6 @@
 package calculoMediaAlunoPOO;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class Aluno {
@@ -13,24 +12,22 @@ public class Aluno {
     private String numerocpf;
 
 
-    private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
+    public ArrayList<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
-
-    public List<Disciplina> getDisciplinas() {
+    public ArrayList<Disciplina> getDisciplinas() {
         return disciplinas;
     }
 
-    public void setDisciplinas(List<Disciplina> disciplinas) {
+    public void setDisciplinas(ArrayList<Disciplina> disciplinas) {
         this.disciplinas = disciplinas;
     }
 
-
-    public void setNome(String nome){
+    public void setNome(String nome) {
         this.nome = nome;
 
     }
 
-    public String getNome(){
+    public String getNome() {
         return nome;
 
     }
@@ -68,42 +65,44 @@ public class Aluno {
     }
 
 
-
     public double getMediaNota() {
 
         double somaNotas = 0.0;
 
-        for(Disciplina disciplina : disciplinas){
+        for (Disciplina disciplina : disciplinas) {
             somaNotas += disciplina.getNota();
         }
         return somaNotas / disciplinas.size();
     }
-
-
-
-    public boolean getAlunoAprovado() {
-        double media = this.getMediaNota();
-        if (media>=60){
-            return true;
-        }else{
-            return false;
-        }
-
-    }
-
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Aluno)) return false;
         Aluno aluno = (Aluno) o;
-        return getNome().equals(aluno.getNome()) && getNumerocpf().equals(aluno.getNumerocpf());
+        return getIdade() == aluno.getIdade() && getNome().equals(aluno.getNome()) && getDataDeNascimento().equals(aluno.getDataDeNascimento()) && getNumeroRg().equals(aluno.getNumeroRg()) && getNumerocpf().equals(aluno.getNumerocpf()) && getDisciplinas().equals(aluno.getDisciplinas());
     }
-
 
     @Override
     public int hashCode() {
-        return Objects.hash(getNome(), getNumerocpf());
+        return Objects.hash(getNome(), getIdade(), getDataDeNascimento(), getNumeroRg(), getNumerocpf(), getDisciplinas());
     }
 
+    public String getAlunoAprovado() {
+        double media = this.getMediaNota();
+        if (media >= 50) {
+            if (media >= 70) {
+                return "Aluno está aprovado !!!";
+            } else {
+                return "Aluno está em recuperação !!!";
+            }
+        } else {
+            return "Aluno está reprovado";
+        }
+
+
+    }
 }
+
+
+

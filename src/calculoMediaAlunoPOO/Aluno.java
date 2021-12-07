@@ -3,16 +3,11 @@ package calculoMediaAlunoPOO;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Aluno {
+public class Aluno extends Pessoa {
 
-    public String nome;
-    public int idade;
-    public String dataDeNascimento;
-    public String numeroRg;
-    private String numerocpf;
+    public String nomeEscola;
 
-
-    public ArrayList<Disciplina> disciplinas = new ArrayList<Disciplina>();
+    public ArrayList<Disciplina> disciplinas = new ArrayList<>();
 
     public ArrayList<Disciplina> getDisciplinas() {
         return disciplinas;
@@ -20,6 +15,15 @@ public class Aluno {
 
     public void setDisciplinas(ArrayList<Disciplina> disciplinas) {
         this.disciplinas = disciplinas;
+    }
+
+
+    public String getNomeEscola() {
+        return nomeEscola;
+    }
+
+    public void setNomeEscola(String nomeEscola) {
+        this.nomeEscola = nomeEscola;
     }
 
     public void setNome(String nome) {
@@ -75,19 +79,6 @@ public class Aluno {
         return somaNotas / disciplinas.size();
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Aluno)) return false;
-        Aluno aluno = (Aluno) o;
-        return getIdade() == aluno.getIdade() && getNome().equals(aluno.getNome()) && getDataDeNascimento().equals(aluno.getDataDeNascimento()) && getNumeroRg().equals(aluno.getNumeroRg()) && getNumerocpf().equals(aluno.getNumerocpf()) && getDisciplinas().equals(aluno.getDisciplinas());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getNome(), getIdade(), getDataDeNascimento(), getNumeroRg(), getNumerocpf(), getDisciplinas());
-    }
-
     public String getAlunoAprovado() {
         double media = this.getMediaNota();
         if (media >= 50) {
@@ -101,6 +92,27 @@ public class Aluno {
         }
 
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Aluno aluno = (Aluno) o;
+        return nomeEscola.equals(aluno.nomeEscola) && disciplinas.equals(aluno.disciplinas);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nomeEscola, disciplinas);
+    }
+
+    @Override
+    public String toString() {
+        return "Aluno{" +
+                "nomeEscola='" + nomeEscola + '\'' +
+                ", disciplinas=" + disciplinas +
+                '}';
     }
 }
 

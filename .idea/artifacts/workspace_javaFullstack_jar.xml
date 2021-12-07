@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="workspace-javaFullstack:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/workspace_javaFullstack_jar</output-path>
+    <root id="archive" name="workspace-javaFullstack.jar">
+      <element id="module-output" name="workspace-javaFullstack" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$KOTLIN_BUNDLED$/lib/kotlin-stdlib.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$KOTLIN_BUNDLED$/lib/kotlin-test.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

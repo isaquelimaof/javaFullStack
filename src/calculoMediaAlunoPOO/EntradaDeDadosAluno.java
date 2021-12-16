@@ -40,20 +40,6 @@ public class EntradaDeDadosAluno {
 
         }
 
-        Aluno aluno1 = new Aluno();
-        int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina? ");
-
-        if (escolha == 0) {
-
-                String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina você quer remover? \n" + aluno1.getNome());
-                // aluno1.getDisciplinas().remove(String.valueOf(disciplinaRemover));
-                var a = getDisciplinas().get(disciplinaRemover);
-
-
-        }
-
-
-
         //disciplinaRemover();
 
         for (Aluno aluno : alunos) {

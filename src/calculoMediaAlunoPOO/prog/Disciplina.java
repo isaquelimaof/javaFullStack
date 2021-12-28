@@ -1,6 +1,5 @@
-package calculoMediaAlunoPOO;
+package calculoMediaAlunoPOO.prog;
 
-import javax.swing.*;
 import java.util.Objects;
 
 public class Disciplina {
@@ -24,21 +23,7 @@ public class Disciplina {
         this.disciplina = disciplina;
     }
 
-    //Método para remover disciplinas
-    public static void disciplinaRemover() {
-        Aluno aluno1 = new Aluno();
-        int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina? ");
-        if (escolha == 0) {
-            int continuarRemover = 0;
-            int posicao = 1;
-            while (continuarRemover == 0) {
-                String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina você quer remover? " + aluno1.disciplinas.toString());
-                aluno1.getDisciplinas().remove(Integer.parseInt(disciplinaRemover) - posicao);
-                posicao++;
-                continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover?");
-            }
-        }
-    }
+
 
     @Override
     public boolean equals(Object o) {

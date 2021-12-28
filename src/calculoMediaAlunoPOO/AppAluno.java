@@ -1,15 +1,20 @@
 package calculoMediaAlunoPOO;
 
+import calculoMediaAlunoPOO.prog.Aluno;
+import calculoMediaAlunoPOO.prog.Disciplina;
+
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EntradaDeDadosAluno {
+
+public class AppAluno {
+
     public static void main(String[] args) {
 
         List<Aluno> alunos = new ArrayList<>();
 
-        for (int qtd = 1; qtd <= 1; qtd++) {
+        for (int qtd = 1; qtd <= 2; qtd++) {
 
             Aluno aluno1 = new Aluno();
 
@@ -39,8 +44,6 @@ public class EntradaDeDadosAluno {
             alunos.add(aluno1);
 
         }
-
-        //disciplinaRemover();
 
         for (Aluno aluno : alunos) {
             for (Disciplina disciplina : aluno.getDisciplinas()) {

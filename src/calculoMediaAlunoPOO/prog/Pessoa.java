@@ -1,4 +1,6 @@
-package calculoMediaAlunoPOO;
+package calculoMediaAlunoPOO.prog;
+
+import java.util.Objects;
 
 public class Pessoa {
 
@@ -46,5 +48,29 @@ public class Pessoa {
 
     public void setNumerocpf(String numerocpf) {
         this.numerocpf = numerocpf;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pessoa pessoa = (Pessoa) o;
+        return idade == pessoa.idade && nome.equals(pessoa.nome) && dataDeNascimento.equals(pessoa.dataDeNascimento) && numeroRg.equals(pessoa.numeroRg) && numerocpf.equals(pessoa.numerocpf);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, idade, dataDeNascimento, numeroRg, numerocpf);
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "nome='" + nome + '\'' +
+                ", idade=" + idade +
+                ", dataDeNascimento='" + dataDeNascimento + '\'' +
+                ", numeroRg='" + numeroRg + '\'' +
+                ", numerocpf='" + numerocpf + '\'' +
+                '}';
     }
 }

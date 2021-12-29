@@ -1,8 +1,11 @@
 package calculoMediaAlunoPOO.prog;
 
+import org.jetbrains.annotations.NotNull;
+
+import javax.swing.*;
 import java.util.Objects;
 
-public class Pessoa {
+public abstract class Pessoa {
 
     protected String nome;
     protected int idade;
@@ -72,5 +75,10 @@ public class Pessoa {
                 ", numeroRg='" + numeroRg + '\'' +
                 ", numerocpf='" + numerocpf + '\'' +
                 '}';
+    }
+
+    public static void teste (@NotNull Pessoa pessoa){
+        System.out.println("Seu nome é: " + pessoa.getNome()
+               + ",e sua idade é: " + pessoa.getIdade());
     }
 }

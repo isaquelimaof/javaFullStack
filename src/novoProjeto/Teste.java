@@ -22,7 +22,7 @@ public class Teste {
         }
 
         for (Pessoa1 teste : listaDados) {
-                System.out.println(teste.getNome() + teste.getCpf());
+                System.out.println("Seu nome é: " + teste.getNome() + "\nSeu cpf é:" + teste.getCpf());
         }
     }
 }

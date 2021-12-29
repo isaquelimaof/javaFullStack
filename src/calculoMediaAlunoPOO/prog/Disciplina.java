@@ -2,7 +2,7 @@ package calculoMediaAlunoPOO.prog;
 
 import java.util.Objects;
 
-public class Disciplina {
+public class Disciplina{
 
     private double nota;
     private String disciplina;
@@ -22,8 +22,6 @@ public class Disciplina {
     public void setDisciplina(String disciplina) {
         this.disciplina = disciplina;
     }
-
-
 
     @Override
     public boolean equals(Object o) {

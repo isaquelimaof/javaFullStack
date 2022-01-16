@@ -1,8 +1,10 @@
 package calculoMediaAlunoPOO.prog;
 
+import calculoMediaAlunoPOO.prog.criandoInterfaces.PermitirAcesso;
+
 import java.util.Objects;
 
-public class Diretor extends Pessoa{
+public class Diretor extends Pessoa {
 
     private String registroEducacao;
     private double tempoDirecao;

@@ -1,12 +1,15 @@
 package calculoMediaAlunoPOO.prog;
 
+import calculoMediaAlunoPOO.prog.criandoInterfaces.PermitirAcesso;
+
 import java.util.Objects;
 
-public class Secretario extends Pessoa{
+public class Secretario extends Pessoa implements PermitirAcesso {
 
     private String registro;
     private String nivelCargo;
     private String experiencia;
+
 
     public String getRegistro() {
         return registro;
@@ -53,5 +56,10 @@ public class Secretario extends Pessoa{
                 ", nivelCargo='" + nivelCargo + '\'' +
                 ", experiencia='" + experiencia + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean autenticarSecretario(String login, String senha) {
+        return login.equals("admin") && senha.equals("admin");
     }
 }

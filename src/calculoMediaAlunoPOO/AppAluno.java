@@ -1,6 +1,12 @@
 package calculoMediaAlunoPOO;
 
-import calculoMediaAlunoPOO.prog.*;
+import calculoMediaAlunoPOO.prog.Aluno;
+import calculoMediaAlunoPOO.prog.Diretor;
+import calculoMediaAlunoPOO.prog.Disciplina;
+import calculoMediaAlunoPOO.prog.Secretario;
+import calculoMediaAlunoPOO.prog.autenticacaoExtrema.FuncaoAutenticacaoDiretor;
+import calculoMediaAlunoPOO.prog.autenticacaoExtrema.FuncaoAutenticacaoSecretario;
+
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,76 +17,82 @@ public class AppAluno {
 
         public static void main(String[] args) {
 
-                String login = JOptionPane.showInputDialog("Informe a login");
-                String senha = JOptionPane.showInputDialog("Informe a senha");
 
-                if (new Secretario().autenticarSecretario(login, senha)) {
+                FuncaoAutenticacaoSecretario autenticacaoSecretario = new FuncaoAutenticacaoSecretario();
+                FuncaoAutenticacaoDiretor autenticacaoDiretor = new FuncaoAutenticacaoDiretor();
 
-                        List<Aluno> alunos = new ArrayList<>();
+                String resposta = JOptionPane.showInputDialog("Qual o usuário: ");
+                if (resposta.equals("Secretario")) {
 
-                        for (int qtd = 1; qtd <= 1; qtd++) {
-                                Aluno aluno1 = new Aluno();
+                        if (autenticacaoSecretario.autenticacaoSecretario(autenticacaoSecretario)){
 
-                                String nome = JOptionPane.showInputDialog("Aluno: " + qtd + "\nDIGITE SEU NOME !!!");
-                                int idade = Integer.parseInt(JOptionPane.showInputDialog("DIGITE SUA IDADE !!!"));
-                                String dataNascimento = JOptionPane.showInputDialog("DIGITE SUA DATA DE NASCIMENTO NO FORMATO dd/MM/yyyy !!!");
-                                String rg = JOptionPane.showInputDialog("DIGITE SEU RG !!!");
-                                String cpf = JOptionPane.showInputDialog("DIGITE SEU CPF !!!");
+                                List<Aluno> alunos = new ArrayList<>();
 
-                                aluno1.setNome(nome);
-                                aluno1.setIdade(idade);
-                                aluno1.setDataDeNascimento(dataNascimento);
-                                aluno1.setNumeroRg(rg);
-                                aluno1.setNumerocpf(cpf);
+                                for (int qtd = 1; qtd <= 1; qtd++) {
+                                        Aluno aluno1 = new Aluno();
 
-                                String nomeDisciplina = JOptionPane.showInputDialog("Digite a " + " disciplina: ");
-                                double nota = Double.parseDouble(JOptionPane.showInputDialog("Digite a " + " nota: "));
+                                        String nome = JOptionPane.showInputDialog("Aluno: " + qtd + "\nDIGITE SEU NOME !!!");
+                                        int idade = Integer.parseInt(JOptionPane.showInputDialog("DIGITE SUA IDADE !!!"));
+                                        String dataNascimento = JOptionPane.showInputDialog("DIGITE SUA DATA DE NASCIMENTO NO FORMATO dd/MM/yyyy !!!");
+                                        String rg = JOptionPane.showInputDialog("DIGITE SEU RG !!!");
+                                        String cpf = JOptionPane.showInputDialog("DIGITE SEU CPF !!!");
 
-                                Disciplina disciplina = new Disciplina();
-                                disciplina.setDisciplina(nomeDisciplina);
-                                disciplina.setNota(nota);
+                                        aluno1.setNome(nome);
+                                        aluno1.setIdade(idade);
+                                        aluno1.setDataDeNascimento(dataNascimento);
+                                        aluno1.setNumeroRg(rg);
+                                        aluno1.setNumerocpf(cpf);
 
-                                aluno1.getDisciplinas().add(disciplina);
+                                        String nomeDisciplina = JOptionPane.showInputDialog("Digite a " + " disciplina: ");
+                                        double nota = Double.parseDouble(JOptionPane.showInputDialog("Digite a " + " nota: "));
 
-                                alunos.add(aluno1);
-                        }
+                                        Disciplina disciplina = new Disciplina();
+                                        disciplina.setDisciplina(nomeDisciplina);
+                                        disciplina.setNota(nota);
 
-                        for (Aluno aluno : alunos) {
-                                for (Disciplina disciplina : aluno.disciplinas) {
-                                        JOptionPane.showMessageDialog(null,
-                                                "Resposta:\nNOME: " + aluno.getNome()
-                                                        + "\nIDADE: " + aluno.getIdade()
-                                                        + "\nDATA DE NASCIMENTO: " + aluno.getDataDeNascimento()
-                                                        + "\nNUMERO DO RG: " + aluno.getNumeroRg()
-                                                        + "\nNUMERO DO CPF: " + aluno.getNumerocpf()
-                                                        + "\n\nSUA MÉDIA É: ----->>> " + aluno.getMediaNota()
-                                                        + "\n" + aluno.getAlunoAprovado()
-                                                        + "\nMatéria: " + disciplina.getDisciplina());
+                                        aluno1.getDisciplinas().add(disciplina);
 
+                                        alunos.add(aluno1);
                                 }
 
-                        Diretor diretor = new Diretor();
-                        diretor.setNome("Isaque Lima");
-                        diretor.setIdade(32);
+                                for (Aluno aluno : alunos) {
+                                        for (Disciplina disciplina : aluno.disciplinas) {
+                                                JOptionPane.showMessageDialog(null,
+                                                        "Resposta:\nNOME: " + aluno.getNome()
+                                                                + "\nIDADE: " + aluno.getIdade()
+                                                                + "\nDATA DE NASCIMENTO: " + aluno.getDataDeNascimento()
+                                                                + "\nNUMERO DO RG: " + aluno.getNumeroRg()
+                                                                + "\nNUMERO DO CPF: " + aluno.getNumerocpf()
+                                                                + "\n\nSUA MÉDIA É: ----->>> " + aluno.getMediaNota()
+                                                                + "\n" + aluno.getAlunoAprovado()
+                                                                + "\nMatéria: " + disciplina.getDisciplina());
 
-                        Secretario secretario = new Secretario();
-                        secretario.setNome("Manuela Santiago");
-                        secretario.setIdade(28);
+                                        }
 
-                        Aluno aluno2 = new Aluno();
-                        aluno2.setNome("Calebe Santiago");
-                        aluno2.setIdade(6);
+                                        Diretor diretor = new Diretor();
+                                        diretor.setNome("Isaque Lima");
+                                        diretor.setIdade(32);
 
-                        teste(diretor);
-                        teste(secretario);
-                        teste(aluno2);
+                                        Secretario secretario = new Secretario();
+                                        secretario.setNome("Manuela Santiago");
+                                        secretario.setIdade(28);
+
+                                        Aluno aluno2 = new Aluno();
+                                        aluno2.setNome("Calebe Santiago");
+                                        aluno2.setIdade(6);
+
+                                        teste(diretor);
+                                        teste(secretario);
+                                        teste(aluno2);
+                                }
+                        }else {
+                                JOptionPane.showMessageDialog(null, "Acesso negado !!! \nSenha e Login nao confere!!!");
                         }
-                }else{
-                        JOptionPane.showMessageDialog(null,"Acesso negado !!! \nSenha e Login nao confere!!!");
+                }else {
+                        JOptionPane.showMessageDialog(null, "Acesso negado !!! \nUsuário não cadatrado!!!");
                 }
         }
 }
-
 
 
 

@@ -1,10 +1,12 @@
 package calculoMediaAlunoPOO.prog;
 
-import calculoMediaAlunoPOO.prog.criandoInterfaces.PermitirAcesso;
+import calculoMediaAlunoPOO.prog.criandoInterfaces.PermitirAcessoSecretario;
+import org.jetbrains.annotations.NotNull;
 
+import javax.swing.*;
 import java.util.Objects;
 
-public class Secretario extends Pessoa implements PermitirAcesso {
+public class Secretario extends Pessoa implements PermitirAcessoSecretario {
 
     private String registro;
     private String nivelCargo;
@@ -59,7 +61,8 @@ public class Secretario extends Pessoa implements PermitirAcesso {
     }
 
     @Override
-    public boolean autenticarSecretario(String login, String senha) {
-        return login.equals("admin") && senha.equals("admin");
+    public boolean autenticarSecretario(@NotNull String login, String senha) {
+        return login.equals(JOptionPane.showInputDialog("Digite o login do Secretario: "))
+                && senha.equals(JOptionPane.showInputDialog("Digite a senha Secretario: "));
     }
 }

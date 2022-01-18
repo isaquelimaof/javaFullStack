@@ -1,10 +1,12 @@
 package calculoMediaAlunoPOO.prog;
 
-import calculoMediaAlunoPOO.prog.criandoInterfaces.PermitirAcesso;
+import calculoMediaAlunoPOO.prog.criandoInterfaces.PermitirAcessoDiretor;
+import org.jetbrains.annotations.NotNull;
 
+import javax.swing.*;
 import java.util.Objects;
 
-public class Diretor extends Pessoa {
+public class Diretor extends Pessoa implements PermitirAcessoDiretor {
 
     private String registroEducacao;
     private double tempoDirecao;
@@ -56,4 +58,11 @@ public class Diretor extends Pessoa {
                 ", titulacao='" + titulacao + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean autenticarDiretor(@NotNull String login, String senha) {
+        return login.equals(JOptionPane.showInputDialog("Digite o login do Diretor: "))
+                && senha.equals(JOptionPane.showInputDialog("Digite a senha Diretor: "));
+    }
+
 }

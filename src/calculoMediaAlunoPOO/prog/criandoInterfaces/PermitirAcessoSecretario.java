@@ -1,6 +1,7 @@
 package calculoMediaAlunoPOO.prog.criandoInterfaces;
 
-public interface PermitirAcesso {
+public interface PermitirAcessoSecretario {
 
     boolean autenticarSecretario(String login, String senha);
+
 }

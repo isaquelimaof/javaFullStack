@@ -7,7 +7,6 @@ import org.jetbrains.annotations.NotNull;
 public class FuncaoAutenticacaoDiretor extends Diretor {
 
     public boolean autenticacaoDiretor(@NotNull PermitirAcessoDiretor acesso) {
-        return acesso.autenticarDiretor("123", "123");
-
+       return acesso.autenticarDiretorLoginSenha("123", "123");
     }
 }

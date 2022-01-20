@@ -1,6 +1,7 @@
 package calculoMediaAlunoPOO.prog;
 
 import org.jetbrains.annotations.NotNull;
+
 import java.util.Objects;
 
 public abstract class Pessoa {

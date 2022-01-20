@@ -61,8 +61,12 @@ public class Secretario extends Pessoa implements PermitirAcessoSecretario {
     }
 
     @Override
-    public boolean autenticarSecretario(@NotNull String login, String senha) {
-        return login.equals(JOptionPane.showInputDialog("Digite o login do Secretario: "))
-                && senha.equals(JOptionPane.showInputDialog("Digite a senha Secretario: "));
+    public boolean autenticarSecretarioLoginSenha(@NotNull String login, String senha) {
+
+            return login.equals(JOptionPane.showInputDialog("Digite o login do Secretario: "))
+                    && senha.equals(JOptionPane.showInputDialog("Digite a senha Secretario: "));
+        }
     }
-}
+
+
+

@@ -60,9 +60,9 @@ public class Diretor extends Pessoa implements PermitirAcessoDiretor {
     }
 
     @Override
-    public boolean autenticarDiretor(@NotNull String login, String senha) {
-        return login.equals(JOptionPane.showInputDialog("Digite o login do Diretor: "))
-                && senha.equals(JOptionPane.showInputDialog("Digite a senha Diretor: "));
-    }
+    public boolean autenticarDiretorLoginSenha(@NotNull String login, String senha) {
 
+        return login.equals(JOptionPane.showInputDialog("Digite o login do Diretor: "))
+        || senha.equals(JOptionPane.showInputDialog("Digite a senha do Diretor: "));
+    }
 }
